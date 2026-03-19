@@ -2,9 +2,9 @@
 
 ## Author
 
-* **Name**: ________________________________
-* **Register Number**: _____________________
-* **Date of Submission**: __________________
+* **Name**: Monika K________________________________
+* **Register Number**: 212223090016_____________________
+* **Date of Submission**: 19/03/26__________________
 
 ---
 
@@ -87,11 +87,22 @@ Create a simple HTML page and verify that it can be accessed from a web browser 
 
 (Write the steps you followed in your own words)
 
-1. ---
-2. ---
-3. ---
-4. ---
-5. ---
+1.First, I created a VPC in Amazon Web Services. I gave it a CIDR block of 10.0.0.0/16. This VPC acts as my private network where all my resources will be created.
+
+Next, I created a public subnet inside the VPC with CIDR 10.0.1.0/24. I enabled auto-assign public IP so that any instance launched in this subnet will automatically get a public IP address.
+
+After that, I created an Internet Gateway and attached it to my VPC. This allows my VPC to communicate with the internet.
+
+Then, I created a route table and added a default route (0.0.0.0/0) pointing to the Internet Gateway. I associated this route table with my public subnet. This step ensures that traffic from my subnet can reach the internet.
+
+Next, I created a security group which acts as a virtual firewall. I allowed inbound traffic for SSH on port 22 and HTTP on port 80.
+
+After completing the network setup, I launched an EC2 instance using Amazon Linux 2 AMI with instance type t2.micro. I selected my VPC, public subnet, created security group, and key pair.
+
+Finally, I connected to the EC2 instance using SSH and installed the Apache web server. I started the service and created a simple HTML page. Then I copied the public IP address of the instance and opened it in a web browser. The webpage was displayed successfully.
+
+So, this is how I created a VPC, launched an EC2 instance, and hosted a simple web server in AWS. ---
+
 
 ---
 
@@ -99,19 +110,22 @@ Create a simple HTML page and verify that it can be accessed from a web browser 
 
 ### Screenshot 1: VPC and Subnet Details
 
-(Insert Screenshot Here)
+<img width="1918" height="983" alt="image" src="https://github.com/user-attachments/assets/564c4bcf-e4c0-4f1c-9407-3657b7797100" />
+
 
 ---
 
 ### Screenshot 2: EC2 Instance Running
 
-(Insert Screenshot Here)
+<img width="1918" height="987" alt="image" src="https://github.com/user-attachments/assets/0c91eafa-1010-45f1-bb31-9c0997137176" />
+
 
 ---
 
 ### Screenshot 3: Web Server Output in Browser
 
-(Insert Screenshot Here)
+<img width="1907" height="1007" alt="image" src="https://github.com/user-attachments/assets/0bcf9e5a-b9b1-4512-8f96-0a61316a88ee" />
+
 
 ---
 
